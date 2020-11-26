@@ -1,0 +1,10 @@
+<h1>WELCOME TO YELP (MVP version)</h1>
+<br>
+
+<%@restaurants.each do |elem|%>
+<div class= "card" >
+  <h3 class = "card-resto-name"><%= link_to elem.name, restaurant_path(elem.id) %></h3>
+  <p class = "card-resto-address" >Where: <%= elem.address %></p>
+</div>
+<br>
+<% end %>

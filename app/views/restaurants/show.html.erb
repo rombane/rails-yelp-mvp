@@ -1,0 +1,18 @@
+<h1><%=@restaurant.name%> </h1>
+<p>A <%=@restaurant.category%> restaurant in <%=@restaurant.address%> (Contact: <%=@restaurant.phone_number%>)</p>
+<br>
+<%@restaurant.reviews.each do |rev|%>
+<%test = rev.rating.to_i%>
+<%str = "X"%>
+<p><%(1..test).each do |num|%>
+  &#x2B50
+<% end %></p>
+<p><%=rev.content %></p>
+<br>
+<% end %>
+
+<br><br>
+
+<p><%=link_to "Make a Review!", new_restaurant_review_path(@restaurant.id)%> &#11088</p>
+<br>
+<p><%=link_to "Home", restaurants_path%> </p>
